@@ -4,9 +4,9 @@ defmodule Pillar.TypeConvert.ToClickhouseJson do
     Enum.map(param, &convert/1)
   end
 
-  def convert(param) when is_integer(param) do
-    Integer.to_string(param)
-  end
+  # def convert(param) when is_integer(param) do
+  #   Integer.to_string(param)
+  # end
 
   def convert(param) when is_boolean(param) do
     case param do
@@ -21,9 +21,9 @@ defmodule Pillar.TypeConvert.ToClickhouseJson do
     Atom.to_string(param)
   end
 
-  def convert(param) when is_float(param) do
-    Float.to_string(param)
-  end
+  # def convert(param) when is_float(param) do
+  #   Float.to_string(param)
+  # end
 
   def convert(%DateTime{} = datetime) do
     datetime
